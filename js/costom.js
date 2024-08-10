@@ -37,23 +37,16 @@ setInterval(() => {
     let h = now.getHours(); // Current hour
     let m = now.getMinutes(); // Current minute
     let s = now.getSeconds(); // Current second
-    let ch = 0;
-    
-    ch = m / 2;
+
     const pc = (ce, te, hand) => {
         // Function to format numbers to always display two digits
         // Update the display for seconds, minutes, and hours
         ce.innerHTML = te < 10 ? "0" + te : ce.innerHTML = te;
         // Update the rotation of clock hands
-        hand.style.transform = `rotate(${te == h ? te * 30 + ch - 180 : te * 6 - 180}deg)`;
+        hand.style.transform = `rotate(${te == h ? te * 30 + (m / 2) - 180 : te * 6 - 180}deg)`;
     };
 
-    s++;
     pc(sec, s, c_sec);
     pc(min, m, c_min);
     pc(hr, h, c_hr);
-
-    if (s == 60) s = 0, m++;
-    if (m == 60) m = 0, h++;
-    if (h == 24) h = 0;
 }, 1000);
