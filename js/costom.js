@@ -30,15 +30,15 @@ let sec = document.getElementById('sec');     // Second display
 let min = document.getElementById('min');     // Minute display
 let hr = document.getElementById('hr');       // Hour display
 
-// Function to update the clock display and hands
-const now = new Date(); // Get current date and time
-let h = now.getHours(); // Current hour
-let m = now.getMinutes(); // Current minute
-let s = now.getSeconds(); // Current second
-let ch = 0;
-
 // Update the clock every second
 setInterval(() => {
+    // Function to update the clock display and hands
+    const now = new Date(); // Get current date and time
+    let h = now.getHours(); // Current hour
+    let m = now.getMinutes(); // Current minute
+    let s = now.getSeconds(); // Current second
+    let ch = 0;
+    
     ch = m / 2;
     const pc = (ce, te, hand) => {
         // Function to format numbers to always display two digits
